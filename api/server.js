@@ -2,7 +2,6 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
-
 const usersRouter = require('./users/users-router');
 const authRouter = require('./auth/auth-router');
 
@@ -26,7 +25,7 @@ server.use(
     name: 'chocolatechip',
     secret: 'keep it secret', //this should go in .env file
     cookie: {
-      maxAge: 1000 * 120,
+      maxAge: 1000 * 60 * 10,
       secure: false, // if true, only works over https
       httpOnly: false, // if true, cookie not in document
     },
